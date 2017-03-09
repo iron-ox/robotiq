@@ -76,8 +76,6 @@ class communication:
       for i in range(0, len(data)/2):
          message.append((data[2*i] << 8) + data[2*i+1])
 
-      print 'Sending %s' % ' '.join(['%02x' % (x,) for x in data])
-
       #To do!: Implement try/except 
       self.client.write_registers(0x03E8, message, unit=0x0009)
 
