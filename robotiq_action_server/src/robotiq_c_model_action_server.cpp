@@ -128,6 +128,7 @@ void CModelGripperActionServer::goalCB()
   catch (BadArgumentsError& e)
   {
     ROS_INFO("%s No goal issued to gripper", action_name_.c_str());
+    as_.setAborted();
   }
 }
 
